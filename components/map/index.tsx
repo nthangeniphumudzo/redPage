@@ -3,7 +3,7 @@
 import GoogleMapReact from "google-map-react";
 import { useState } from "react";
 import style from "./styles.module.scss";
-import { Input } from "antd";
+import Image from "next/image";
 import ProfileQuickView from "@components/profileQuickView";
 
 const Map = () => {
@@ -30,7 +30,7 @@ const Map = () => {
             setOpen(true);
           }}
         >
-          <img
+          <Image
             src="/assets/images/holder.png" // Replace with the path to your image
             alt="Marker Image"
             style={{
@@ -70,8 +70,8 @@ const Map = () => {
           defaultZoom={zoom}
           options={mapOptions as any}
         >
-          {markers.map(({ lat, lng }) => (
-            <Marker lat={lat} lng={lng} />
+          {markers.map(({ lat, lng, id }) => (
+            <Marker lat={lat} lng={lng} key={id} />
           ))}
         </GoogleMapReact>
       </div>

@@ -1,7 +1,7 @@
 import "@styles/globals.css";
 import { FC } from "react";
 import Nav from "../components/navBar";
-import Provider from "@components/Provider";
+import Script from "next/script";
 
 export const metadata = {
   title: "Red page",
@@ -20,7 +20,7 @@ const RootLayout: FC<any> = ({ children }) => {
           <Nav />
           {children}
         </main>
-        <script
+        <Script
           type="text/javascript"
           src={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${googleMapsApiKey}&callback=initMap`}
         />

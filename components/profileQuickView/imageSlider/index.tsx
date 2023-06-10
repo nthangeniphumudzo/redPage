@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import Image from "next/image";
 
 interface ImageSliderProps {
   images: string[];
@@ -14,7 +15,7 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ images }) => {
 
   return (
     <div style={{ position: "relative" }}>
-      <img
+      <Image
         src={images[currentImageIndex]}
         alt="Slider"
         style={{
