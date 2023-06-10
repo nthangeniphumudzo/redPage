@@ -1,0 +1,20 @@
+.profileModal {
+  display: grid;
+  grid-template-columns: 100%;
+  background-color: rgb(193, 219, 244);
+  height: 400px;
+  width: 100%;
+
+  .profileNav {
+    width: 100%;
+    margin-top: 1.4rem;
+  }
+}
+.profileDetails{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.userName{
+    margin-top: -10px;
+}

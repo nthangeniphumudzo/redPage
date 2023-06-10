@@ -1,0 +1,80 @@
+.navContainer {
+  display: flex;
+  width: 100%;
+  flex: 50% 50%;
+
+  .logo {
+    display: flex;
+    width: 50%;
+  }
+  .buttonLinks {
+    margin: 20px;
+    width: 50%;
+    display: flex;
+    justify-items: flex-end;
+    justify-content: space-between;
+    color: rgb(113, 111, 111);
+
+    @media (max-width: 400px) {
+      /* Styles for large displays */
+      &.largeDisplayOnly {
+        display: none;
+      }
+    }
+  }
+
+  .hoverableLink:hover {
+    color: black;
+  }
+
+  .hoverableLink:hover ~ .hoverableLink {
+    background-color: initial;
+  }
+}
+.logo {
+  margin: 1rem 25px 0px 20px;
+}
+.heading {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  color: black;
+  font-size: 19px;
+  font-weight: 400;
+  margin-top: -0.1rem;
+  margin-left: 15px;
+}
+.crumbMenu {
+  margin-bottom: 16px; // Adjust the margin as needed
+}
+
+.crumbItem {
+  display: flex;
+  align-items: center;
+  font-size: 16px; // Adjust the font size as needed
+  color: #000000; // Adjust the color as needed
+}
+
+.crumbIcon {
+  margin-right: 4px; // Adjust the margin as needed
+}
+.hoverableButton {
+  border: none;
+}
+@media (max-width: 400px) {
+  .buttonLinkSmall {
+    display: flex;
+    margin-left: 9rem !important;
+   
+  }
+  .navContainer{
+  
+    width: 100%;
+    flex: 80% 10%;
+    
+  }
+}
+@media (min-width: 400px) {
+  .buttonLinkSmall {
+    display: none;
+  }
+
+}
