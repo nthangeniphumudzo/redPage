@@ -3,7 +3,6 @@
 import GoogleMapReact from "google-map-react";
 import { useState } from "react";
 import style from "./styles.module.scss";
-import Image from "next/image";
 import ProfileQuickView from "@components/profileQuickView";
 
 const Map = () => {
@@ -30,13 +29,14 @@ const Map = () => {
             setOpen(true);
           }}
         >
-          <Image
+          <img
             src="/assets/images/holder.png" // Replace with the path to your image
             alt="Marker Image"
             style={{
               width: "20px", // Adjust size as needed
               height: "20px",
             }}
+
           />
         </div>
         <ProfileQuickView setOpen={setOpen} open={open} />
