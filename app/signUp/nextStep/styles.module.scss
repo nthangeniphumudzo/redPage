@@ -1,0 +1,26 @@
+.signUpForm {
+  display: block;
+  justify-items: center;
+  margin: auto;
+  width: 85%;
+  overflow-y: scroll;
+  .signupHeader {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    text-decoration: underline;
+    font-family: fantasy;
+  }
+  .formContainer {
+    margin: 0 auto;
+    display: block;
+    align-items: center;
+
+    @media (min-width: 400px) {
+      .form {
+        width: 800px;
+        margin-left: 200px;
+      }
+    }
+  }
+}

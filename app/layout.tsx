@@ -1,6 +1,6 @@
 import "@styles/globals.css";
 import { FC } from "react";
-import Nav from "../components/navBar";
+import QueryProvider from "@components/QueryProvider";
 
 export const metadata = {
   title: "Red page",
@@ -9,6 +9,7 @@ export const metadata = {
 
 const RootLayout: FC<any> = ({ children }) => {
   const googleMapsApiKey = process.env.NEXT_PUBLIC_GOOGLE_API_KEY;
+
   return (
     <html lang="en">
       <body>
@@ -16,8 +17,7 @@ const RootLayout: FC<any> = ({ children }) => {
           <div className="gradient" />
         </div>
         <main className="app">
-          <Nav />
-          {children}
+          <QueryProvider>{children}</QueryProvider>
         </main>
         <script
           type="text/javascript"

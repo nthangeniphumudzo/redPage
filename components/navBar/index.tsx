@@ -6,8 +6,7 @@ import { useState, useEffect } from "react";
 import { getProviders } from "next-auth/react";
 import style from "./styles.module.scss";
 import { Button, Dropdown, Menu } from "antd";
-import { Breadcrumb } from "antd";
-import { HomeOutlined, MenuOutlined } from "@ant-design/icons";
+import { MenuOutlined } from "@ant-design/icons";
 
 const Nav: FC<any> = () => {
   const [providers, setProviders] = useState(null);
@@ -63,7 +62,6 @@ const Nav: FC<any> = () => {
         </div>
         <ButtonDropdown />
       </div>
-    
     </>
   );
 };
