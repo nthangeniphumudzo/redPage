@@ -1,5 +1,5 @@
 "use client";
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import style from "./styles.module.scss";
 import {
   Button,
@@ -15,7 +15,8 @@ import {
 import { PlusOutlined } from "@ant-design/icons";
 import { RcFile, UploadProps } from "antd/es/upload";
 import { IMAGES_MAX_COUNT } from "@appConstant";
-
+import LocationSearchInput from "@components/autocompletePlace";
+import LocationTracker from "@components/locationTracker";
 
 const formItemLayout = {
   labelCol: {
@@ -53,6 +54,7 @@ const NextStep: FC<any> = () => {
   const [previewOpen, setPreviewOpen] = useState(false);
   const [previewImage, setPreviewImage] = useState("");
   const [previewTitle, setPreviewTitle] = useState("");
+  const [formattedAddress, setFormattedAddress] = useState("");
   const [fileList, setFileList] = useState<UploadFile[]>([
     {
       uid: "-1",
@@ -73,7 +75,20 @@ const NextStep: FC<any> = () => {
       url: "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png",
     },
   ]);
-
+  useEffect(() => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          console.log("position ::", position);
+        },
+        (error) => {
+          console.log(error.message);
+        }
+      );
+    } else {
+      console.log("Geolocation is not supported by your browser.");
+    }
+  }, []);
   const handleCancel = () => setPreviewOpen(false);
 
   const handlePreview = async (file: UploadFile) => {
@@ -143,7 +158,14 @@ const NextStep: FC<any> = () => {
             ]}
             hasFeedback
           >
-            <Input />
+            <LocationSearchInput
+              formattedAddress={formattedAddress}
+              setFormattedAddress={setFormattedAddress}
+            />
+            <LocationTracker
+              formattedAddress={formattedAddress}
+              setFormattedAddress={setFormattedAddress}
+            />
           </Form.Item>
 
           <Form.Item

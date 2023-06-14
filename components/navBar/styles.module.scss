@@ -15,7 +15,7 @@
     justify-content: space-between;
     color: rgb(113, 111, 111);
 
-    @media (max-width: 400px) {
+    @media (max-width: 650px) {
       /* Styles for large displays */
       &.largeDisplayOnly {
         display: none;
@@ -59,22 +59,18 @@
 .hoverableButton {
   border: none;
 }
-@media (max-width: 400px) {
+@media (max-width: 650px) {
   .buttonLinkSmall {
     display: flex;
     margin-left: 9rem !important;
-   
   }
-  .navContainer{
-  
+  .navContainer {
     width: 100%;
     flex: 80% 10%;
-    
   }
 }
-@media (min-width: 400px) {
+@media (min-width: 650px) {
   .buttonLinkSmall {
     display: none;
   }
-
 }

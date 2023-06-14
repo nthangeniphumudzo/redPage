@@ -28,6 +28,7 @@ const Map = () => {
           onClick={() => {
             setOpen(true);
           }}
+          className="markerStick"
         >
           <img
             src="/assets/images/holder.png" // Replace with the path to your image
@@ -36,7 +37,6 @@ const Map = () => {
               width: "20px", // Adjust size as needed
               height: "20px",
             }}
-
           />
         </div>
         <ProfileQuickView setOpen={setOpen} open={open} />
@@ -56,10 +56,9 @@ const Map = () => {
   };
   const markers = [
     { id: 1, lat: -25.83078657574137, lng: 28.195243791245624 },
-    { id: 2, lat: -25.82175430817243, lng: 28.26836600679971 },
-    { id: 3, lat: -25.816610004972884, lng: 28.222067150212417 },
-    { id: 4, lat: -25.80454082393786, lng: 28.238670894783115 },
-    { id: 5, lat: -25.87845523668794, lng: 28.231313076721216 },
+    { id: 5, lat: -25.8405355, lng: 28.1912703 },
+    { id: 4, lat: -25.8618042, lng: 28.2501886 },
+    { id: 2, lat: -25.7534891, lng: 28.2078956 },
   ];
 
   return (
