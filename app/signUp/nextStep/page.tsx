@@ -12,11 +12,12 @@ import {
   Upload,
   UploadFile,
 } from "antd";
-import { PlusOutlined } from "@ant-design/icons";
+import { CameraOutlined, PlusOutlined } from "@ant-design/icons";
 import { RcFile, UploadProps } from "antd/es/upload";
 import { IMAGES_MAX_COUNT } from "@appConstant";
 import LocationSearchInput from "@components/autocompletePlace";
 import LocationTracker from "@components/locationTracker";
+import  { CaptureModal } from "@components/CameraCapture";
 
 const formItemLayout = {
   labelCol: {
@@ -52,6 +53,7 @@ const getBase64 = (file: RcFile): Promise<string> =>
 const NextStep: FC<any> = () => {
   const [form] = Form.useForm();
   const [previewOpen, setPreviewOpen] = useState(false);
+  const [isReady, setIsReady] = useState(false);
   const [previewImage, setPreviewImage] = useState("");
   const [previewTitle, setPreviewTitle] = useState("");
   const [formattedAddress, setFormattedAddress] = useState("");
@@ -201,6 +203,13 @@ const NextStep: FC<any> = () => {
             >
               {fileList.length >= IMAGES_MAX_COUNT ? null : uploadButton}
             </Upload>
+            <Button
+              type="dashed"
+              onClick={() => setIsReady(true)}
+              icon={<CameraOutlined/>}
+            >
+              Take Live Picture
+            </Button>
             <Modal
               open={previewOpen}
               title={previewTitle}
@@ -209,6 +218,7 @@ const NextStep: FC<any> = () => {
             >
               <img alt="example" style={{ width: "100%" }} src={previewImage} />
             </Modal>
+            <CaptureModal setIsReady={setIsReady} isReady={isReady} setFileList={setFileList} />
           </Form.Item>
 
           <Form.Item

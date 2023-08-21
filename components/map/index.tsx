@@ -23,7 +23,9 @@ const Map = () => {
         <div
           style={{
             position: "absolute",
-            transform: "translate(-50%, -100%)", // Adjust positioning as needed
+            cursor: "pointer",
+            transform: "translate(-50%, -100%)",
+            // Adjust positioning as needed
           }}
           onClick={() => {
             setOpen(true);
